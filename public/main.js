@@ -9,7 +9,7 @@ document.getElementById("Form").onsubmit = function() {
       }
       
       if (!/^[a-zA-Z\u00C0-\u00FF]*$/.test(firstName)) {
-        alert("El primer nombre solo debe contener caracteres alfabéticos y soportar caracteres en español.");
+        alert("El primer nombre solo debe contener caracteres alfabéticos.");
         isValid = false;
       }
     }
@@ -32,7 +32,7 @@ document.getElementById("Form").onsubmit = function() {
       }
       
       if (!/^[a-zA-Z\u00C0-\u00FF']*$/i.test(lastName)) {
-        alert("El primer apellido solo debe contener caracteres alfabéticos, soportar caracteres en español, apostrofes o comillas simples ('), y no debe contener espacios.");
+        alert("El primer apellido solo debe contener caracteres alfabéticos.");
         isValid = false;
       }
     }
@@ -48,7 +48,7 @@ document.getElementById("Form").onsubmit = function() {
       alert("El campo 'Email' es obligatorio y no debe estar vacío.");
       isValid = false;
     } else if (!/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
-      alert("El Email debe tener el formato de un correo electrónico válido.");
+      alert("Tiene que ser un dominio valido.");
       isValid = false;
     }
     
