@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0"> 
+    
+    <meta name="author" content="Jesus Castillejo">
+    <meta name="copyright" content="Ref. to author | 2023 all right reserved">
+    <meta name="description" content="BC desafio 10"> 
+    <meta name="keywords" content="BC, BootCampo, HTML, CSS, JS">
+    
+
+    <link rel="stylesheet" href="../public/styles/reset.css">
+    <link rel="stylesheet" href="../public/styles/normalizer.css">
+    <link rel="stylesheet" href="../public/styles/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Formulario</title>
+</head>
+<body>
+    <main>
+        <form id="Form" class="form">
+            <div class="name line">
+                <label for="firstName">Primer nombre:</label><br>
+                <input type="text" id="firstName" name="firstName"><br><br>
+            </div>
+            <div class="lastname line">
+                <label for="lastName">Primer apellido:</label><br>
+                <input type="text" id="lastName" name="lastName"><br><br>
+            </div>
+            <div class="mail line">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+            </div>
+            <div class="document line">
+                <label>Tipo de documento:</label><br><br>
+                <input type="radio" id="dni" name="documentType" value="DNI">
+                <label for="dni">DNI</label><br><br>
+                <input type="radio" id="cuil" name="documentType" value="CUIL">
+                <label for="cuil">CUIL</label><br><br>
+                
+                <label for="documentNumber">Número de documento:</label><br>
+                <input type="text" id="documentNumber" name="documentNumber" disabled><br><br> 
+            </div>
+            <div class="address line">
+                <label for="address">Dirección:</label><br>
+                <input type="text" id="address" name="address"><br><br>
+            </div>
+            <div class="identity line">
+                <label>Identidad:</label><br><br>
+                <input type="radio" id="male" name="identity" value="Hombre">
+                <label for="male">Hombre</label><br><br>
+                <input type="radio" id="female" name="identity" value="Mujer">
+                <label for="female">Mujer</label><br><br>
+                <input type="radio" id="other" name="identity" value="Otro">
+                <label for="other">Otro</label><br><br>
+                
+                <div id="otherIdentityX" style="display: none;">
+                <label for="otherIdentity">Especifique:</label><br>
+                <input type="text" id="otherIdentity" name="otherIdentity"><br><br>
+                </div>
+            </div>
+            <div class="bd line">
+                <label for="birthDate">Fecha de Nacimiento:</label><br><br>
+                <input type="date" id="birthDate" name="birthDate"><br><br>
+
+            </div>
+            <div class="country line">
+                <label for="country">País:</label><br>
+                <select id="country" name="country">
+                    <option value="Seleccionar Pais">Seleccionar Pais</option> 
+                    <option value="Argentina">Argentina</option>
+                    <option value="Bolivia">Bolivia</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Guyana">Guyana</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Peru">Peru</option>
+                    <option value="Surinam">Surinam</option>
+                    <option value="Uruguay">Uruguay</option>
+                    <option value="Venezuela">Venezuela</option>
+                </select><br><br>
+            
+                <div id="provinceA" style="display: none;" class="province">
+                    <label for="province">Provincia:</label><br>
+                    <select id="province" name="province">
+                        <option value="Seleccionar Provincia">Seleccionar Provincia</option>
+                        <option value="Buenos Aires">Buenos Aires</option>
+                        <option value="Capital Federal">Capital Federal</option>
+                        <option value="Catamarca">Catamarca</option>
+                        <option value="Chaco">Chaco</option>
+                        <option value="Chubut">Chubut</option>
+                        <option value="Córdoba">Córdoba</option>
+                        <option value="Corrientes">Corrientes</option>
+                        <option value="Entre Ríos">Entre Ríos</option>
+                        <option value="Formosa">Formosa</option>
+                        <option value="Jujuy">Jujuy</option>
+                        <option value="La Pampa">La Pampa</option>
+                        <option value="La Rioja">La Rioja</option>
+                        <option value="Mendoza">Mendoza</option>
+                        <option value="Misiones">Misiones</option>
+                        <option value="Neuquen">Neuquen</option>
+                        <option value="Rio Negro">Rio Negro</option>
+                        <option value="Salta">Salta</option>
+                        <option value="San Juan">San Juan</option>
+                        <option value="San Luis">San Luis</option>
+                        <option value="Santa Cruz">Santa Cruz</option>
+                        <option value="Santa Fe">Santa Fe</option>
+                        <option value="Santiago del Estero">Santiago del Estero</option>
+                        <option value="Tierra del fuego, Antartida e Islas Del Atlantico Sur">Tierra del fuego, Antartida e Islas Del Atlantico Sur</option>
+                        <option value="Tucuman">Tucuman</option>
+                        </select><br><br>
+                </div>
+            </div>
+
+            <div class="button">
+                <input type="submit" value="Enviar">
+            </div>
+
+        </form>
+    </main>
+
+    <script src="./main.js"></script>
+</body>
+</html>
