@@ -1,7 +1,22 @@
+
+document.querySelectorAll('input[name="documentType"]').forEach(function(el) {
+    el.addEventListener("change", function() {
+      document.getElementById("documentNumber").disabled = false;
+    });
+  });
+  
 document.getElementById("Form").onsubmit = function() {
     let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+    let email = document.getElementById("email").value;
+    let documentType = document.querySelector('input[name="documentType"]:checked');
+    let documentNumber = document.getElementById("documentNumber").value;
+    let address = document.getElementById("address").value;
+    let identity = document.querySelector('input[name="identity"]:checked');
+    let otherIdentity = document.getElementById("otherIdentity").value;
     let isValid = true;
     
+    // Validate firstName
     if (firstName.length > 0) {
       if (firstName.length < 3 || firstName.length > 10) {
         alert("El primer nombre debe tener entre 3 y 10 caracteres.");
@@ -14,14 +29,7 @@ document.getElementById("Form").onsubmit = function() {
       }
     }
     
-    return isValid;
-    
-}
-
-document.getElementById("Form").onsubmit = function() {
-    let lastName = document.getElementById("lastName").value;
-    let isValid = true;
-    
+    // Validate lastName
     if (lastName.length == 0) {
       alert("El campo 'Primer apellido' es obligatorio.");
       isValid = false;
@@ -37,13 +45,7 @@ document.getElementById("Form").onsubmit = function() {
       }
     }
     
-    return isValid;
-}
-
-document.getElementById("Form").onsubmit = function() {
-    let email = document.getElementById("email").value;
-    let isValid = true;
-    
+    // Validate email
     if (email.length == 0) {
       alert("El campo 'Email' es obligatorio y no debe estar vacío.");
       isValid = false;
@@ -52,32 +54,7 @@ document.getElementById("Form").onsubmit = function() {
       isValid = false;
     }
     
-    return isValid;
-  }
-
-document.getElementById("Form").onsubmit = function() {
-    let documentType = document.querySelector('input[name="documentType"]:checked');
-    let isValid = true;
-    
-    if (documentType == null) {
-      alert("El campo 'Tipo de documento' es obligatorio.");
-      isValid = false;
-    }
-    
-    return isValid;
-}
-
-document.querySelectorAll('input[name="documentType"]').forEach(function(el) {
-    el.addEventListener("change", function() {
-      document.getElementById("documentNumber").disabled = false;
-    });
-  });
-  
-  document.getElementById("Form").onsubmit = function() {
-    let documentType = document.querySelector('input[name="documentType"]:checked');
-    let documentNumber = document.getElementById("documentNumber").value;
-    let isValid = true;
-    
+    // Validate documentType and documentNumber
     if (documentType == null) {
       alert("El campo 'Tipo de documento' es obligatorio.");
       isValid = false;
@@ -95,13 +72,7 @@ document.querySelectorAll('input[name="documentType"]').forEach(function(el) {
       }
     }
     
-    return isValid;
-}
-
-document.getElementById("Form").onsubmit = function() {
-    let address = document.getElementById("address").value;
-    let isValid = true;
-    
+    // Validate address
     if (address.length > 0) {
       if (address.length < 10 || address.length > 200) {
         alert("La dirección debe tener entre 10 y 200 caracteres.");
@@ -114,24 +85,7 @@ document.getElementById("Form").onsubmit = function() {
       }
     }
     
-    return isValid;
-}
-
-document.querySelectorAll('input[name="identity"]').forEach(function(el) {
-    el.addEventListener("change", function() {
-      if (el.value == "Otro") {
-        document.getElementById("otherIdentityX").style.display = "block";
-      } else {
-        document.getElementById("otherIdentityX").style.display = "none";
-      }
-    });
-  });
-  
-  document.getElementById("Form").onsubmit = function() {
-    let identity = document.querySelector('input[name="identity"]:checked');
-    let otherIdentity = document.getElementById("otherIdentity").value;
-    let isValid = true;
-    
+    // Validate identity and otherIdentity
     if (identity == null) {
       alert("El campo 'Identidad' es obligatorio.");
       isValid = false;
@@ -147,6 +101,16 @@ document.querySelectorAll('input[name="identity"]').forEach(function(el) {
     
     return isValid;
 }
+
+document.querySelectorAll('input[name="identity"]').forEach(function(el) {
+    el.addEventListener("change", function() {
+      if (el.value == "Otro") {
+        document.getElementById("otherIdentityX").style.display = "block";
+      } else {
+        document.getElementById("otherIdentityX").style.display = "none";
+      }
+    });
+});
 
 document.getElementById("country").addEventListener("change", function() {
   if (this.value == "Argentina") {
